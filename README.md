@@ -1,4 +1,4 @@
-catalyst_examples
+Catalyst Examples
 =================
 
 Here are the complete working examples of Catalyst::Manual::Tutorial
