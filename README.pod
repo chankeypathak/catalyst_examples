@@ -2,10 +2,18 @@
 
 Here are the complete working examples of Catalyst::Manual::Tutorial
 
+=item *
+
 Chapter 3 - More Catalyst Basics
+
+=item *
 
 Chapter 4 - Basic CRUD
 
+=item *
+
 Chapter 5 - Authentication 
+
+=item *
 
 Chapter 6 - Authorization
