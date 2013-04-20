@@ -1,6 +1,7 @@
 =head1 Catalyst Examples
 
 Here are the complete working examples of Catalyst::Manual::Tutorial
+=over 4
 
 =item *
 
@@ -17,3 +18,5 @@ Chapter 5 - Authentication
 =item *
 
 Chapter 6 - Authorization
+
+=back
