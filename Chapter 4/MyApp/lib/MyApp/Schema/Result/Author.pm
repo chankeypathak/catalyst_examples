@@ -24,11 +24,13 @@ extends 'DBIx::Class::Core';
 
 =item * L<DBIx::Class::InflateColumn::DateTime>
 
+=item * L<DBIx::Class::TimeStamp>
+
 =back
 
 =cut
 
-__PACKAGE__->load_components("InflateColumn::DateTime");
+__PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp");
 
 =head1 TABLE: C<author>
 
@@ -105,8 +107,8 @@ Composing rels: L</book_authors> -> book
 __PACKAGE__->many_to_many("books", "book_authors", "book");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-04-19 23:37:44
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:on8YKGKOJfRmLy3qOA1Qeg
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-04-21 22:02:51
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:EdZ7Ilj+FBN/Jgk7LD7kXQ
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

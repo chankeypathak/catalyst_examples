@@ -24,11 +24,13 @@ extends 'DBIx::Class::Core';
 
 =item * L<DBIx::Class::InflateColumn::DateTime>
 
+=item * L<DBIx::Class::TimeStamp>
+
 =back
 
 =cut
 
-__PACKAGE__->load_components("InflateColumn::DateTime");
+__PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp");
 
 =head1 TABLE: C<book>
 
@@ -54,6 +56,16 @@ __PACKAGE__->table("book");
   data_type: 'integer'
   is_nullable: 1
 
+=head2 created
+
+  data_type: 'timestamp'
+  is_nullable: 1
+
+=head2 updated
+
+  data_type: 'timestamp'
+  is_nullable: 1
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -63,6 +75,10 @@ __PACKAGE__->add_columns(
   { data_type => "text", is_nullable => 1 },
   "rating",
   { data_type => "integer", is_nullable => 1 },
+  "created",
+  { data_type => "timestamp", is_nullable => 1 },
+  "updated",
+  { data_type => "timestamp", is_nullable => 1 },
 );
 
 =head1 PRIMARY KEY
@@ -105,8 +121,17 @@ Composing rels: L</book_authors> -> author
 __PACKAGE__->many_to_many("authors", "book_authors", "author");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-04-19 23:37:44
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4Z/8Lho33v8oxj9uVv0VsQ
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-04-21 22:02:51
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:8ig1CIkugqMeLr7hy4OVBQ
+#
+# Enable automatic date handling
+#
+__PACKAGE__->add_columns(
+    "created",
+    { data_type => 'timestamp', set_on_create => 1 },
+    "updated",
+    { data_type => 'timestamp', set_on_create => 1, set_on_update => 1 },
+);
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
