@@ -21,4 +21,17 @@ sub created_after {
     });
 }
  
+=head2 title_like
+ 
+A predefined search for books with a 'LIKE' search in the string
+ 
+=cut
+ 
+sub title_like {
+    my ($self, $title_str) = @_;
+ 
+    return $self->search({
+        title => { 'like' => "%$title_str%" }
+    });
+}
 1;
